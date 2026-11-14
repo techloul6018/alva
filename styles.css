@@ -226,10 +226,12 @@ a { color: inherit; }
     var(--surface);
   display: grid; place-items: center; overflow: hidden;
 }
-.lamp-small { width: 78%; }
+.piece-frame:has(.piece-photo) { aspect-ratio: 4 / 5; place-items: stretch; background: #1a0d07; }
+.piece-frame picture { display: contents; }
+.piece-photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; display: block; }
 .piece-num {
-  position: absolute; top: 28px; left: 50%; transform: translateX(-50%);
-  font-family: "Fraunces", serif; font-size: 15px; color: var(--muted); letter-spacing: .1em;
+  position: absolute; top: 28px; left: 50%; transform: translateX(-50%); z-index: 1;
+  font-family: "Fraunces", serif; font-size: 15px; color: rgba(255, 240, 225, .85); letter-spacing: .1em;
 }
 .piece-text h2 { font-size: clamp(34px, 4.5vw, 52px); margin-bottom: 28px; }
 .piece-text > p { color: var(--muted); font-size: 18px; margin-bottom: 16px; max-width: 520px; }
