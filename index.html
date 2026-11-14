@@ -33,16 +33,27 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
-      <p class="eyebrow">Studio de design d'objet</p>
-      <h1>Des objets qui <em>captent</em> la lumière.</h1>
-      <p class="lead">Alva dessine des objets du quotidien aux formes douces. La chaleur du bois, la précision de l'aluminium, l'éclat de l'orange&nbsp;: entre l'utile et le beau, des pièces faites pour durer.</p>
-      <div class="hero-actions">
-        <a href="#piece-01" class="btn btn-primary">Découvrir la pièce N°01</a>
-        <a href="#univers" class="btn btn-ghost">L'univers du studio</a>
+      <p class="eyebrow hero-fade" style="--d: 0ms">Studio de design d'objet</p>
+      <h1 class="hero-title" aria-label="Des objets qui captent la lumière.">
+        <span class="line" aria-hidden="true"><span class="w" style="--i:0">Des</span> <span class="w" style="--i:1">objets</span> <span class="w" style="--i:2">qui</span></span>
+        <span class="line" aria-hidden="true"><span class="rotator"><em class="rot is-on">captent</em><em class="rot">réchauffent</em><em class="rot">traversent</em><em class="rot">sculptent</em><em class="rot">apprivoisent</em></span></span>
+        <span class="line" aria-hidden="true"><span class="w" style="--i:4">la</span> <span class="w" style="--i:5">lumière.</span></span>
+      </h1>
+      <p class="lead hero-fade" style="--d: 650ms">Alva dessine des objets du quotidien aux formes douces. La chaleur du bois, la précision de l'aluminium, l'éclat de l'orange&nbsp;: entre l'utile et le beau, des pièces faites pour durer.</p>
+      <div class="hero-actions hero-fade" style="--d: 800ms">
+        <a href="#piece-01" class="btn btn-primary magnetic">Découvrir la pièce N°01 <span class="btn-arrow" aria-hidden="true">→</span></a>
+        <a href="#univers" class="btn btn-ghost magnetic">L'univers du studio</a>
       </div>
     </div>
     <figure class="hero-visual" aria-label="Illustration de la lampe N°01 : un pied en aluminium incliné, une tête en aluminium et une demi-sphère orange lumineuse">
       <div class="glow" aria-hidden="true"></div>
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <defs><path id="badge-circle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+          <text><textPath href="#badge-circle" textLength="286">pièce unique · seconde vie · N°01 · </textPath></text>
+        </svg>
+        <span class="badge-dot"></span>
+      </div>
       <svg viewBox="0 0 400 440" class="lamp" aria-hidden="true">
         <defs>
           <linearGradient id="alu" x1="0" y1="0" x2="1" y2="1">
@@ -86,6 +97,26 @@
   <div class="strata" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-row" data-dir="1">
+      <div class="marquee-track">
+        <span>Bois</span><i>✺</i><span>Aluminium</span><i>✺</i><span>Verre ambré</span><i>✺</i><span>Lumière</span><i>✺</i><span>Contreplaqué</span><i>✺</i><span>Béton</span><i>✺</i>
+      </div>
+    </div>
+    <div class="marquee-row marquee-outline" data-dir="-1">
+      <div class="marquee-track">
+        <span>Seconde vie</span><i>●</i><span>Fait en France</span><i>●</i><span>Réparable</span><i>●</i><span>Pièce unique</span><i>●</i><span>Sans angles</span><i>●</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANIFESTE -->
+  <section class="section manifesto" aria-label="Manifeste">
+    <p class="eyebrow"><span class="idx">00</span>Manifeste</p>
+    <p class="manifesto-text" data-scrub>On ne voit jamais la source, seulement la <mark>lumière</mark>. Elle chauffe le bois, glisse sur l'aluminium, traverse l'<mark>orange</mark>. Alva part d'objets qui existent déjà et leur offre une <mark>seconde vie</mark>, faite pour durer.</p>
+  </section>
 
   <!-- UNIVERS -->
   <section id="univers" class="section">
@@ -337,10 +368,16 @@
 </main>
 
 <footer class="footer">
-  <span class="logo logo-small">alva<span class="dot"></span></span>
-  <span>Studio de design d'objet</span>
-  <span>© <span id="year">2026</span></span>
+  <div class="footer-mark" aria-hidden="true"><span>a</span><span>l</span><span>v</span><span>a</span><span class="dot"></span></div>
+  <div class="footer-row">
+    <span class="logo logo-small">alva<span class="dot"></span></span>
+    <span>Studio de design d'objet</span>
+    <span>© <span id="year">2026</span></span>
+  </div>
 </footer>
+
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
 
 <script src="site.js"></script>
 </body>
