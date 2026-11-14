@@ -35,20 +35,3 @@ if (scrub && !reduced) {
   }, { passive: true });
   update();
 }
-
-/* Material names drift slowly, at a constant pace. */
-const track = document.querySelector('.marquee-track');
-if (track && !reduced) {
-  track.innerHTML += track.innerHTML;
-  let half = track.scrollWidth / 2;
-  let x = 0;
-  addEventListener('resize', () => { half = track.scrollWidth / 2; });
-  document.fonts && document.fonts.ready.then(() => { half = track.scrollWidth / 2; });
-  const step = () => {
-    x -= 0.4;
-    if (x <= -half) x += half;
-    track.style.setProperty('--x', `${x.toFixed(2)}px`);
-    requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
