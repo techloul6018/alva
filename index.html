@@ -3,320 +3,197 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alva · objets de seconde vie</title>
-<meta name="description" content="Alva fabrique des objets à partir d'autres objets. N°01 : une lampe de chevet faite d'un pied d'iMac, d'un Mac mini et d'une demi-sphère orange imprimée en 3D.">
-<meta property="og:title" content="Alva · objets de seconde vie">
-<meta property="og:description" content="N°01 : une lampe de chevet faite d'un pied d'iMac et d'un Mac mini.">
-<meta property="og:image" content="https://alva-steel.vercel.app/images/lampe-n01.jpg">
-<meta property="og:type" content="website">
+<title>Alva — Studio de design d'objet</title>
+<meta name="description" content="Alva est un studio de design d'objet. Des formes douces, des matières qui vieillissent bien, et la lumière comme matériau.">
+<meta property="og:title" content="Alva — Studio de design d'objet">
+<meta property="og:description" content="Des objets aux formes douces, qui captent la lumière.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#2a2c2e" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f2eee6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,100;1,9..144,300..700,100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Shared paint filter: wobbly washed edges + paper grain for the illustrations -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <filter id="paint" x="-10%" y="-10%" width="120%" height="120%">
-      <feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="3" seed="4" result="warp"/>
-      <feDisplacementMap in="SourceGraphic" in2="warp" scale="9" xChannelSelector="R" yChannelSelector="G" result="wobble"/>
-      <feGaussianBlur in="wobble" stdDeviation=".6" result="soft"/>
-      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="9" result="grain"/>
-      <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -.45 1.1" result="grainAlpha"/>
-      <feComposite in="soft" in2="grainAlpha" operator="in"/>
-    </filter>
-  </defs>
-</svg>
+<a class="skip" href="#contenu">Aller au contenu</a>
 
-<header class="nav">
-  <a href="#top" class="logo" aria-label="Alva, accueil">alva<span class="dot"></span></a>
-  <nav aria-label="Navigation principale">
-    <a href="#piece-01">N°01</a>
-    <a href="#pieces">Pièces</a>
-    <a href="#regles">Règles</a>
-    <a href="#matieres">Matières</a>
-    <a href="#inspirations">Inspirations</a>
-  </nav>
-  <a href="#piece-01" class="pill pill-dark nav-pill">Voir la N°01</a>
-</header>
+<aside class="side">
+  <a href="#top" class="side-top">Index</a>
+  <a href="#top" class="logo" aria-label="Alva, accueil">alva<i aria-hidden="true"></i></a>
 
-<main id="top">
+  <details class="toc-wrap" open>
+    <summary>Sommaire</summary>
+    <nav class="toc" aria-label="Sommaire">
+      <ol>
+        <li class="toc-part"><span>S.</span><a href="#univers">Studio</a></li>
+        <li><span>1.</span><a href="#univers">Univers</a></li>
+        <li><span>2.</span><a href="#matieres">Matières</a></li>
+        <li><span>3.</span><a href="#engagements">Engagements</a></li>
+        <li class="toc-part"><span>P.</span><a href="#piece-01">Pièces</a></li>
+        <li><span>4.</span><a href="#piece-01">Lampe N°01</a></li>
+        <li><span>5.</span><a href="#atelier">À l'atelier</a></li>
+        <li class="toc-part"><span>M.</span><a href="#demarche">Méthode</a></li>
+        <li><span>6.</span><a href="#demarche">Démarche</a></li>
+        <li><span>7.</span><a href="#inspirations">Inspirations</a></li>
+        <li class="toc-part"><span>C.</span><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+  </details>
 
-  <!-- HERO -->
-  <section class="hero">
-    <p class="kicker">Alva, objets de seconde vie</p>
-    <h1>On ne jette pas un pied d'<em>iMac</em>.</h1>
-    <p class="lead">Alva fabrique des objets à partir d'autres objets. La première pièce est une lampe de chevet.</p>
-    <div class="hero-actions">
-      <a href="#piece-01" class="pill pill-dark">Découvrir la N°01</a>
-      <a href="#regles" class="text-link">Les règles de l'atelier <span aria-hidden="true">→</span></a>
+  <p class="side-count" title="Pièces terminées"><span>00</span>1</p>
+</aside>
+
+<main id="contenu">
+
+  <section id="top" class="hero">
+    <svg class="sketch" viewBox="0 0 120 150" aria-hidden="true">
+      <rect x="20" y="22" width="80" height="14" rx="6" class="solid"/>
+      <path d="M40 36 A20 20 0 0 0 80 36" class="fill"/>
+      <path d="M74 38 L48 132" class="dash"/>
+      <path d="M26 134 H90" class="solid"/>
+      <path d="M60 60 L60 70 M44 58 L38 66 M76 58 L82 66" class="dot"/>
+    </svg>
+
+    <p class="kicker">Studio de design d'objet</p>
+    <h1>Des objets qui <em>captent</em> la lumière.</h1>
+    <p class="lead">Des objets du quotidien aux formes douces&nbsp;: la chaleur du bois, la précision de l'aluminium, l'éclat de l'orange. Entre l'utile et le beau, des pièces faites pour durer.</p>
+
+    <div class="index-head">
+      <h2 class="index-title">Index des pièces</h2>
+      <p class="legend"><span class="d d-full"></span>Terminée <span class="d d-half"></span>En cours <span class="d"></span>À venir</p>
     </div>
-  </section>
-
-  <!-- SHOWCASE : la photo et le schéma, côte à côte -->
-  <section class="showcase" aria-label="La lampe N°01">
-    <figure class="tile tile-photo">
-      <picture>
-        <source srcset="images/lampe-n01.webp" type="image/webp">
-        <img src="images/lampe-n01.jpg" width="1000" height="1326" fetchpriority="high"
-             alt="La lampe N°01 allumée sur une table de chevet en bois : pied en aluminium d'iMac, tête de Mac mini et demi-sphère orange qui projette une lumière chaude sur le mur.">
-      </picture>
-      <figcaption>La N°01, allumée</figcaption>
-    </figure>
-    <figure class="tile tile-peach" aria-label="Schéma de la lampe N°01 avec ses trois pièces : la tête, le diffuseur et le pied">
-      <svg viewBox="0 0 520 460" class="diagram" aria-hidden="true">
-        <defs>
-          <linearGradient id="alu" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" style="stop-color:var(--alu-hi)"/>
-            <stop offset=".55" style="stop-color:var(--alu)"/>
-            <stop offset="1" style="stop-color:var(--alu-lo)"/>
-          </linearGradient>
-          <linearGradient id="aluSide" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" style="stop-color:var(--alu)"/>
-            <stop offset="1" style="stop-color:var(--alu-lo)"/>
-          </linearGradient>
-        </defs>
-        <rect x="96" y="384" width="210" height="16" rx="8" fill="url(#aluSide)"/>
-        <path d="M148 388 L222 150 Q226 138 238 138 L258 138 Q270 138 266 150 L196 388 Z" fill="url(#alu)"/>
-        <rect x="214" y="128" width="64" height="20" rx="10" fill="url(#aluSide)"/>
-        <rect x="96" y="70" width="236" height="62" rx="22" fill="url(#alu)"/>
-        <path d="M156 132 A58 58 0 0 0 272 132 Z" class="dome"/>
-        <g class="callouts">
-          <path d="M332 96 H372"/><circle cx="332" cy="96" r="3"/>
-          <path d="M262 168 L300 196 H372"/><circle cx="262" cy="168" r="3"/>
-          <path d="M228 300 H372"/><circle cx="228" cy="300" r="3"/>
-        </g>
-        <g class="labels">
-          <text x="382" y="92">Tête</text><text x="382" y="110" class="sub">Mac mini</text>
-          <text x="382" y="192">Diffuseur</text><text x="382" y="210" class="sub">PLA, 3D</text>
-          <text x="382" y="296">Pied</text><text x="382" y="314" class="sub">iMac</text>
-        </g>
-      </svg>
-      <figcaption>Trois pièces</figcaption>
-    </figure>
-  </section>
-
-  <!-- PIÈCE 01 -->
-  <section id="piece-01" class="section split">
-    <div>
-      <span class="chip chip-done">Terminée</span>
-      <h2>N°01, la lampe de chevet</h2>
-    </div>
-    <div class="split-body">
-      <p>Un pied d'iMac est une très bonne tige de lampe&nbsp;: lourd, stable, déjà incliné. Le corps d'un Mac mini fait une tête plate et nette. Il manquait de quoi cacher l'ampoule.</p>
-      <p>J'ai dessiné une demi-sphère en PLA orange, imprimée en 3D, glissée sous la tête. L'ampoule disparaît. La lumière sort teintée par le plastique et remonte sur le mur.</p>
-      <dl class="specs">
-        <div><dt>Pied</dt><dd>Support aluminium d'iMac, récupéré</dd></div>
-        <div><dt>Tête</dt><dd>Corps de Mac mini</dd></div>
-        <div><dt>Diffuseur</dt><dd>Demi-sphère PLA orange, impression 3D</dd></div>
-        <div><dt>Série</dt><dd>Pièce unique</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- Manifeste : la seule chose qui bouge, la lumière qui s'allume -->
-  <section class="manifesto" aria-label="Pourquoi l'ampoule est cachée">
-    <p class="manifesto-text" data-scrub>Une ampoule nue, c'est un point qui fait mal aux yeux. Cachée derrière du plastique orange, elle devient une <mark>tache de lumière chaude</mark> sur le mur. C'est la seule chose que la N°01 cherche à montrer.</p>
-  </section>
-
-  <!-- PIÈCES À VENIR -->
-  <section id="pieces" class="section">
-    <div class="section-head">
-      <h2>Les prochaines pièces</h2>
-      <p class="section-lead">Par ordre de difficulté. Aucune n'est terminée.</p>
-    </div>
-    <div class="cards">
-
-      <article class="card card-wide">
-        <div class="card-art art-sand">
-          <svg viewBox="0 0 400 260" aria-hidden="true">
-            <g filter="url(#paint)">
-              <ellipse cx="150" cy="196" rx="96" ry="18" fill="#000" opacity=".08"/>
-              <path d="M62 120 Q62 196 150 196 Q238 196 238 120 Z" fill="#a9a49d"/>
-              <ellipse cx="150" cy="120" rx="88" ry="22" fill="#c4bfb8"/>
-              <ellipse cx="150" cy="122" rx="70" ry="14" fill="#8f8a83"/>
-              <ellipse cx="300" cy="206" rx="54" ry="10" fill="#000" opacity=".08"/>
-              <rect x="262" y="132" width="76" height="74" rx="16" fill="#d07a45"/>
-              <ellipse cx="300" cy="134" rx="38" ry="9" fill="#e09a6a"/>
-              <path d="M300 96 Q292 112 300 124 Q308 112 300 96 Z" fill="#e8702a"/>
-            </g>
-          </svg>
-        </div>
-        <span class="chip chip-live">En cours</span>
-        <h3>N°02, béton coulé</h3>
-        <p>Vide-poches, bougeoirs et cache-pots, moulés en silicone et teintés dans la masse.</p>
-      </article>
-
-      <article class="card">
-        <div class="card-art art-peach">
-          <svg viewBox="0 0 260 260" aria-hidden="true">
-            <g filter="url(#paint)">
-              <ellipse cx="130" cy="218" rx="54" ry="9" fill="#000" opacity=".08"/>
-              <rect x="126" y="140" width="8" height="74" rx="4" fill="#6d7279"/>
-              <rect x="92" y="208" width="76" height="10" rx="5" fill="#6d7279"/>
-              <rect x="114" y="132" width="32" height="14" rx="5" fill="#8a8f96"/>
-              <circle cx="130" cy="88" r="52" fill="#e0a25c"/>
-              <circle cx="130" cy="88" r="34" fill="#eab676"/>
-              <circle cx="114" cy="72" r="14" fill="#f8dcb0"/>
-            </g>
-          </svg>
-        </div>
-        <span class="chip">Recherche</span>
-        <h3>N°03, lampe métal et verre</h3>
-        <p>La première lampe dessinée sans objet de départ.</p>
-      </article>
-
-      <article class="card">
-        <div class="card-art art-sage">
-          <svg viewBox="0 0 260 260" aria-hidden="true">
-            <g filter="url(#paint)">
-              <ellipse cx="130" cy="208" rx="90" ry="10" fill="#000" opacity=".08"/>
-              <path d="M44 104 H216 V122 H44 Z" fill="#e9d8bd"/>
-              <path d="M44 108 H216 M44 113 H216 M44 118 H216" stroke="#e8702a" stroke-width="2"/>
-              <path d="M62 122 Q58 170 72 206 H84 Q74 170 80 122 Z" fill="#c69a6b"/>
-              <path d="M198 122 Q202 170 188 206 H176 Q186 170 180 122 Z" fill="#c69a6b"/>
-            </g>
-          </svg>
-        </div>
-        <span class="chip">Recherche</span>
-        <h3>N°04, table en contreplaqué</h3>
-        <p>Fines couches cintrées sur gabarit, strates colorées sur la tranche.</p>
-      </article>
-
-      <article class="card">
-        <div class="card-art art-stone">
-          <svg viewBox="0 0 260 260" aria-hidden="true">
-            <g filter="url(#paint)">
-              <rect x="58" y="58" width="144" height="144" rx="14" fill="#b5b0a8"/>
-              <rect x="70" y="70" width="36" height="36" rx="4" fill="#e8702a"/>
-              <rect x="112" y="70" width="36" height="36" rx="4" fill="#2a2c2e"/>
-              <rect x="154" y="70" width="36" height="36" rx="4" fill="#f4efe6"/>
-              <rect x="70" y="112" width="36" height="36" rx="4" fill="#f4efe6"/>
-              <rect x="112" y="112" width="36" height="36" rx="4" fill="#e8702a"/>
-              <rect x="154" y="112" width="36" height="36" rx="4" fill="#2a2c2e"/>
-              <rect x="70" y="154" width="36" height="36" rx="4" fill="#2a2c2e"/>
-              <rect x="112" y="154" width="36" height="36" rx="4" fill="#f4efe6"/>
-              <rect x="154" y="154" width="36" height="36" rx="4" fill="#e8702a"/>
-            </g>
-          </svg>
-        </div>
-        <span class="chip">Croquis</span>
-        <h3>N°05, mosaïque sur béton</h3>
-        <p>Géométrie stricte en orange, noir et blanc.</p>
-      </article>
-
-      <article class="card">
-        <div class="card-art art-mist">
-          <svg viewBox="0 0 260 260" aria-hidden="true">
-            <g filter="url(#paint)">
-              <ellipse cx="130" cy="196" rx="104" ry="10" fill="#000" opacity=".08"/>
-              <rect x="34" y="122" width="192" height="22" rx="11" fill="#b98a5a"/>
-              <rect x="54" y="144" width="14" height="52" rx="7" fill="#9b6a3d"/>
-              <rect x="192" y="144" width="14" height="52" rx="7" fill="#9b6a3d"/>
-            </g>
-          </svg>
-        </div>
-        <span class="chip">Plus tard</span>
-        <h3>N°06, banc, puis fauteuil</h3>
-        <p>Quand le travail du bois sera maîtrisé.</p>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- RÈGLES -->
-  <section id="regles" class="section band">
-    <div class="section-head">
-      <h2>Les règles de l'atelier</h2>
-      <p class="section-lead">Elles valent pour chaque objet, la N°01 comprise.</p>
-    </div>
-    <ol class="rules">
-      <li><h3>Partir d'un objet qui existe déjà.</h3><p>Le pied d'iMac était là avant la lampe. La forme est imposée, le travail consiste à lui trouver un autre usage.</p></li>
-      <li><h3>On ne voit pas l'ampoule.</h3><p>Pour une lampe, la source reste cachée. Ce qui compte, c'est l'endroit où la lumière arrive.</p></li>
-      <li><h3>Aucune arête vive.</h3><p>Tout ce qui se touche est arrondi. Un objet doit se prendre en main sans effort, y compris avec des mains âgées ou appareillées.</p></li>
-      <li><h3>Visser plutôt que coller.</h3><p>Un objet qu'on peut démonter, on peut le réparer.</p></li>
-      <li><h3>Le matériau reste visible.</h3><p>La tranche du contreplaqué, le grain du béton&nbsp;: pas de couche par-dessus pour faire joli.</p></li>
-      <li><h3>Une seule couleur vive&nbsp;: l'orange.</h3><p>C'est celle qui réagit le mieux à la lumière. Le reste est en bois, en métal ou en gris.</p></li>
-      <li><h3>Acheter français quand il faut acheter.</h3><p>Bois, lin, céramique&nbsp;: une provenance qu'on peut raconter.</p></li>
+    <ol class="index-grid">
+      <li><a href="#piece-01" class="cell is-done"><span class="mark">01</span><span class="name">Lampe de chevet</span></a></li>
+      <li><a href="#atelier" class="cell is-wip"><span class="mark">02</span><span class="name">Béton coulé</span></a></li>
+      <li><a href="#atelier" class="cell"><span class="mark">03</span><span class="name">Lampe métal &amp; verre</span></a></li>
+      <li><a href="#atelier" class="cell"><span class="mark">04</span><span class="name">Table contreplaqué</span></a></li>
+      <li><a href="#atelier" class="cell"><span class="mark">05</span><span class="name">Mosaïque</span></a></li>
+      <li><a href="#atelier" class="cell"><span class="mark">06</span><span class="name">Banc, fauteuil</span></a></li>
     </ol>
   </section>
 
-  <!-- MATIÈRES -->
-  <section id="matieres" class="section">
-    <div class="section-head">
-      <h2>Matières</h2>
-      <p class="section-lead">Celles de la N°01, et celles des pièces qui suivent.</p>
+  <section id="univers" class="sec">
+    <header class="sec-head"><span class="num">1.</span><h2>Univers</h2></header>
+    <p class="sec-lead">Un minimalisme chaleureux. Le calme du Japandi, réchauffé par le soleil des années 70&nbsp;: assez sobre pour servir chaque jour, assez singulier pour qu'on le remarque.</p>
+    <div class="rows">
+      <div class="row reveal"><span class="row-k">a.</span><h3>Pas d'angles</h3><p>Des arrondis partout&nbsp;: plus doux à la main, plus sûrs, et des objets qui vieillissent rarement mal.</p></div>
+      <div class="row reveal"><span class="row-k">b.</span><h3>La lumière comme matière</h3><p>On ne voit jamais la source, seulement la lumière. Elle chauffe le bois, glisse sur l'alu, traverse l'orange.</p></div>
+      <div class="row reveal"><span class="row-k">c.</span><h3>Des matières honnêtes</h3><p>La beauté vient du matériau lui-même&nbsp;: tranche du contreplaqué, patine du cuir, grain du béton.</p></div>
+      <div class="row reveal"><span class="row-k">d.</span><h3>Seconde vie</h3><p>Partir d'une contrainte plutôt que d'une page blanche. Détourner un objet sans trahir sa forme.</p></div>
     </div>
-    <ul class="materials">
-      <li class="used"><span class="swatch sw-alu" aria-hidden="true"></span><b>Aluminium</b><span>brossé, récupéré sur du matériel Apple. Utilisé dans la N°01.</span></li>
-      <li class="used"><span class="swatch sw-pla" aria-hidden="true"></span><b>PLA orange</b><span>imprimé en 3D. Utilisé dans la N°01.</span></li>
-      <li><span class="swatch sw-wood" aria-hidden="true"></span><b>Chêne, frêne</b><span>huilés</span></li>
-      <li><span class="swatch sw-ply" aria-hidden="true"></span><b>Contreplaqué</b><span>pour les strates visibles sur la tranche</span></li>
-      <li><span class="swatch sw-glass" aria-hidden="true"></span><b>Verre ambré</b><span>pour une lumière diffuse</span></li>
-      <li><span class="swatch sw-concrete" aria-hidden="true"></span><b>Béton</b><span>coulé en moule silicone, teinté dans la masse</span></li>
-      <li><span class="swatch sw-leather" aria-hidden="true"></span><b>Cuir</b><span>tanné végétal</span></li>
-      <li><span class="swatch sw-linen" aria-hidden="true"></span><b>Lin, coton</b><span>bruts</span></li>
-      <li><span class="swatch sw-plant" aria-hidden="true"></span><b>Plantes</b><span>intégrées à l'objet, pas posées à côté</span></li>
+  </section>
+
+  <section id="matieres" class="sec">
+    <header class="sec-head"><span class="num">2.</span><h2>Matières</h2></header>
+    <p class="sec-lead">D'un côté l'organique et le vivant, de l'autre la rigueur et la modernité. Les objets Alva naissent de leur rencontre.</p>
+    <ul class="mat-grid">
+      <li class="reveal"><span class="glyph g-wood" aria-hidden="true"></span><h3>Bois</h3><p>Chêne, frêne, bois huilé.</p></li>
+      <li class="reveal"><span class="glyph g-ply" aria-hidden="true"></span><h3>Contreplaqué</h3><p>Strates visibles sur la tranche.</p></li>
+      <li class="reveal"><span class="glyph g-alu" aria-hidden="true"></span><h3>Aluminium</h3><p>Brossé, il capte la lumière.</p></li>
+      <li class="reveal"><span class="glyph g-glass" aria-hidden="true"></span><h3>Verre</h3><p>Ambré, diffus, jamais banal.</p></li>
+      <li class="reveal"><span class="glyph g-leather" aria-hidden="true"></span><h3>Cuir</h3><p>Tanné végétal, qui se patine.</p></li>
+      <li class="reveal"><span class="glyph g-linen" aria-hidden="true"></span><h3>Lin &amp; coton</h3><p>Textures naturelles, douces.</p></li>
+      <li class="reveal"><span class="glyph g-concrete" aria-hidden="true"></span><h3>Béton</h3><p>Coulé en moule silicone.</p></li>
+      <li class="reveal"><span class="glyph g-plant" aria-hidden="true"></span><h3>Végétal</h3><p>La plante comme partie de l'objet.</p></li>
     </ul>
   </section>
 
-  <!-- INSPIRATIONS -->
-  <section id="inspirations" class="section">
-    <div class="section-head">
-      <h2>Au mur de l'atelier</h2>
-      <p class="section-lead">Les designers que je relis quand un objet ne marche pas.</p>
-    </div>
-    <ul class="inspirations">
-      <li><strong>Dieter Rams</strong><span>Moins, mais mieux.</span><em>Allemagne</em></li>
-      <li><strong>Naoto Fukasawa</strong><span>Des objets qui disparaissent dans l'usage.</span><em>Japon</em></li>
-      <li><strong>Charles &amp; Ray Eames</strong><span>Le contreplaqué moulé.</span><em>États-Unis</em></li>
-      <li><strong>Louis Poulsen</strong><span>La lumière diffuse.</span><em>Danemark</em></li>
-      <li><strong>Verner Panton</strong><span>Couleur, lumière, rondeurs.</span><em>Danemark</em></li>
-      <li><strong>Jasper Morrison</strong><span>Le «&nbsp;super normal&nbsp;».</span><em>Royaume-Uni</em></li>
-      <li><strong>Ronan &amp; Erwan Bouroullec</strong><span>Poésie et utilité.</span><em>France</em></li>
-      <li><strong>Kenya Hara</strong><span>Le vide et l'essentiel.</span><em>Japon</em></li>
-      <li><strong>Hans Wegner</strong><span>Le bois travaillé.</span><em>Danemark</em></li>
-      <li><strong>Shiro Kuramata</strong><span>Poésie et rigueur.</span><em>Japon</em></li>
-      <li><strong>Cecilie Manz</strong><span>Formes douces, sobriété.</span><em>Danemark</em></li>
-      <li><strong>Ilse Crawford</strong><span>Le minimalisme chaleureux.</span><em>Royaume-Uni</em></li>
-    </ul>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="contact-tile">
-      <h2>Contact</h2>
-      <p>Pas encore d'adresse publique. L'e-mail et les réseaux de l'atelier arrivent bientôt.</p>
+  <section id="engagements" class="sec">
+    <header class="sec-head"><span class="num">3.</span><h2>Engagements</h2></header>
+    <p class="sec-lead">Des objets qu'on garde. Ce qui guide chaque choix de forme, de matière et de fabrication.</p>
+    <div class="rows">
+      <div class="row reveal"><span class="row-k">a.</span><h3>Fait en France</h3><p>Chêne et frêne français, lin, céramique et artisans locaux dès que c'est possible. Une provenance qu'on peut raconter.</p></div>
+      <div class="row reveal"><span class="row-k">b.</span><h3>Réparable</h3><p>Des pièces vissées plutôt que collées, des composants standards. Un objet Alva se répare, se modifie, se transmet.</p></div>
+      <div class="row reveal"><span class="row-k">c.</span><h3>Pour tout le monde</h3><p>Des prises en main faciles, aucune arête vive. Un objet bien pensé sert aussi les mains fragiles, âgées ou appareillées.</p></div>
+      <div class="row reveal"><span class="row-k">d.</span><h3>Le végétal intégré</h3><p>La plante comme une partie de l'objet, pas comme un accessoire posé à côté.</p></div>
     </div>
   </section>
 
+  <section id="piece-01" class="sec">
+    <header class="sec-head"><span class="num">4.</span><h2>Lampe N°01</h2></header>
+    <div class="piece">
+      <figure class="piece-photo reveal">
+        <picture>
+          <source srcset="images/lampe-n01.webp" type="image/webp">
+          <img src="images/lampe-n01.jpg" width="1000" height="1326" loading="lazy" decoding="async"
+               alt="La lampe N°01 allumée sur une table de chevet en bois : pied en aluminium d'iMac, tête de Mac mini et demi-sphère orange qui diffuse une lumière chaude sur le mur.">
+        </picture>
+        <figcaption>Fig. 1 — N°01, lampe de chevet, seconde vie.</figcaption>
+      </figure>
+      <div class="piece-text">
+        <p class="piece-title">La lampe de chevet, <em>seconde vie.</em></p>
+        <p>Deux icônes du design industriel, détournées en une seule lampe. Le pied en aluminium d'un iMac devient la tige. Le corps d'un Mac mini devient la tête.</p>
+        <p>Dedans, l'ampoule est cachée par une demi-sphère orange imprimée en 3D. La lumière la traverse, redescend et remonte sur l'alu brossé&nbsp;: la lampe semble flotter.</p>
+        <dl class="specs">
+          <div><dt>Pied</dt><dd>Support aluminium d'iMac</dd></div>
+          <div><dt>Tête</dt><dd>Corps de Mac mini</dd></div>
+          <div><dt>Diffuseur</dt><dd>Demi-sphère PLA orange, imprimée en 3D</dd></div>
+          <div><dt>Démarche</dt><dd>Upcycling, pièce unique</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="atelier" class="sec">
+    <header class="sec-head"><span class="num">5.</span><h2>À l'atelier</h2></header>
+    <p class="sec-lead">Les prochaines pièces, de la plus simple à la plus ambitieuse.</p>
+    <ol class="list">
+      <li class="reveal"><span class="list-n">02</span><div><h3>Béton coulé</h3><p>Vide-poches, bougeoirs, cache-pots. Moules en silicone, béton teinté dans la masse.</p></div><span class="tag tag-on">En cours</span></li>
+      <li class="reveal"><span class="list-n">03</span><div><h3>Lampe métal &amp; verre</h3><p>Une nouvelle lumière, pensée de zéro autour de ce que le verre doit raconter.</p></div><span class="tag">En recherche</span></li>
+      <li class="reveal"><span class="list-n">04</span><div><h3>Table en contreplaqué</h3><p>Fines couches cintrées et collées sur gabarit, strates visibles sur la tranche.</p></div><span class="tag">En recherche</span></li>
+      <li class="reveal"><span class="list-n">05</span><div><h3>Mosaïque sur béton</h3><p>Une géométrie rigoureuse, une palette réduite.</p></div><span class="tag">Esquisse</span></li>
+      <li class="reveal"><span class="list-n">06</span><div><h3>Banc, puis fauteuil</h3><p>L'assise, quand le bois n'aura plus de secret.</p></div><span class="tag">Plus tard</span></li>
+    </ol>
+  </section>
+
+  <section id="demarche" class="sec">
+    <header class="sec-head"><span class="num">6.</span><h2>Démarche</h2></header>
+    <p class="sec-lead">De l'esquisse à la pièce. On teste tôt, on corrige souvent, et on ne lance rien qui n'ait été tenu en main.</p>
+    <ol class="steps">
+      <li class="reveal"><span class="step-n">i.</span><h3>Contrainte</h3><p>Un objet à détourner, une matière, un usage. Jamais une page blanche.</p></li>
+      <li class="reveal"><span class="step-n">ii.</span><h3>Esquisse &amp; 3D</h3><p>Croquis, puis modélisation pour caler les volumes et les cotes.</p></li>
+      <li class="reveal"><span class="step-n">iii.</span><h3>Prototype</h3><p>Impression 3D, carton, mousse&nbsp;: une forme à tenir en main.</p></li>
+      <li class="reveal"><span class="step-n">iv.</span><h3>Itérations</h3><p>On essaie, on corrige, on recommence, avec les vraies matières.</p></li>
+      <li class="reveal"><span class="step-n">v.</span><h3>La pièce</h3><p>Finitions, photos, puis une petite série fabriquée près d'ici.</p></li>
+    </ol>
+  </section>
+
+  <section id="inspirations" class="sec">
+    <header class="sec-head"><span class="num">7.</span><h2>Inspirations</h2></header>
+    <p class="sec-lead">Ceux qui ont ouvert la voie&nbsp;: le calme japonais, la chaleur scandinave, la poésie européenne et le soleil des années 70.</p>
+    <div class="insp">
+      <div class="reveal"><h3>Japon</h3><ul>
+        <li><strong>Kenya Hara</strong><span>le vide et l'essentiel</span></li>
+        <li><strong>Naoto Fukasawa</strong><span>des objets qui disparaissent dans l'usage</span></li>
+        <li><strong>Shiro Kuramata</strong><span>poésie et rigueur</span></li></ul></div>
+      <div class="reveal"><h3>Scandinavie</h3><ul>
+        <li><strong>Hans Wegner</strong><span>le bois travaillé</span></li>
+        <li><strong>Cecilie Manz</strong><span>formes douces, sobriété</span></li>
+        <li><strong>Louis Poulsen</strong><span>la lumière diffuse</span></li></ul></div>
+      <div class="reveal"><h3>Europe</h3><ul>
+        <li><strong>Ronan &amp; Erwan Bouroullec</strong><span>poésie et utilité</span></li>
+        <li><strong>Jasper Morrison</strong><span>le «&nbsp;super normal&nbsp;»</span></li>
+        <li><strong>Ilse Crawford</strong><span>le minimalisme chaleureux</span></li></ul></div>
+      <div class="reveal"><h3>Années 50–70</h3><ul>
+        <li><strong>Charles &amp; Ray Eames</strong><span>le contreplaqué moulé</span></li>
+        <li><strong>Verner Panton</strong><span>couleur, lumière, rondeurs</span></li>
+        <li><strong>Dieter Rams</strong><span>moins, mais mieux</span></li></ul></div>
+    </div>
+  </section>
+
+  <section id="contact" class="sec contact">
+    <header class="sec-head"><span class="num">C.</span><h2>Contact</h2></header>
+    <p class="contact-big">Une pièce vous parle&nbsp;?</p>
+    <p class="sec-lead">Commande, collaboration, presse, ou simple curiosité&nbsp;: le studio répond à chaque message.</p>
+    <p class="contact-soon">Adresse et réseaux de l'atelier très bientôt.</p>
+  </section>
+
+  <footer class="footer">
+    <span>alva — studio de design d'objet</span>
+    <span>© <span id="year">2026</span></span>
+  </footer>
 </main>
-
-<footer class="footer">
-  <div class="footer-cols">
-    <div>
-      <a href="#top" class="logo" aria-label="Alva, retour en haut">alva<span class="dot"></span></a>
-      <p>Objets de seconde vie.</p>
-    </div>
-    <nav aria-label="Pièces">
-      <h2>Pièces</h2>
-      <a href="#piece-01">N°01, lampe de chevet</a>
-      <a href="#pieces">Prochaines pièces</a>
-    </nav>
-    <nav aria-label="Atelier">
-      <h2>Atelier</h2>
-      <a href="#regles">Règles</a>
-      <a href="#matieres">Matières</a>
-      <a href="#inspirations">Inspirations</a>
-    </nav>
-  </div>
-  <p class="footer-legal">© <span id="year">2026</span> Alva</p>
-</footer>
 
 <script src="site.js"></script>
 </body>

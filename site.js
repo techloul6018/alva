@@ -1,37 +1,38 @@
 document.documentElement.classList.add('js');
 document.getElementById('year').textContent = new Date().getFullYear();
 
-const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/* Manifesto: each word lights up as it scrolls through the reading zone,
-   like the wall catching the lamp's light. The only scroll effect on the site. */
-const scrub = document.querySelector('[data-scrub]');
-if (scrub && !reduced) {
-  const wrap = (node) => {
-    [...node.childNodes].forEach((child) => {
-      if (child.nodeType !== Node.TEXT_NODE) { wrap(child); return; }
-      const frag = document.createDocumentFragment();
-      child.textContent.split(/(\s+)/).forEach((part) => {
-        if (!part) return;
-        if (/^\s+$/.test(part)) { frag.append(part); return; }
-        const s = document.createElement('span');
-        s.className = 'sw'; s.textContent = part; frag.append(s);
-      });
-      child.replaceWith(frag);
+// Reveal on scroll
+const items = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
     });
-  };
-  wrap(scrub);
-  const words = [...scrub.querySelectorAll('.sw')];
-  let ticking = false;
-  const update = () => {
-    const r = scrub.getBoundingClientRect();
-    const p = (innerHeight * 0.8 - r.top) / (r.height + innerHeight * 0.25);
-    const lit = Math.round(Math.max(0, Math.min(1, p)) * words.length);
-    words.forEach((w, i) => w.classList.toggle('lit', i < lit));
-    ticking = false;
-  };
-  addEventListener('scroll', () => {
-    if (!ticking) { ticking = true; requestAnimationFrame(update); }
-  }, { passive: true });
-  update();
+  }, { threshold: 0.12 });
+  items.forEach((el) => io.observe(el));
+} else {
+  items.forEach((el) => el.classList.add('is-in'));
+}
+
+// Sommaire : ouvert sur grand écran, replié sur mobile, refermé après un clic
+const toc = document.querySelector('.toc-wrap');
+const mq = window.matchMedia('(max-width: 900px)');
+const syncToc = () => { toc.open = !mq.matches; };
+syncToc();
+mq.addEventListener('change', syncToc);
+toc.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { if (mq.matches) toc.open = false; }));
+
+// Section courante soulignée dans le sommaire
+const links = new Map();
+toc.querySelectorAll('li:not(.toc-part) a').forEach((a) => links.set(a.getAttribute('href').slice(1), a));
+if ('IntersectionObserver' in window) {
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      links.forEach((a) => a.classList.remove('is-active'));
+      const a = links.get(e.target.id);
+      if (a) a.classList.add('is-active');
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  document.querySelectorAll('main section[id]').forEach((s) => spy.observe(s));
 }
