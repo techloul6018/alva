@@ -189,11 +189,11 @@ a { color: inherit; }
 .sw-plant { background: radial-gradient(circle at 30% 30%, #8fb07a, #44673a); }
 .signature-note {
   margin-top: 48px; font-size: 19px; color: var(--muted);
-  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  display: flex; align-items: center; gap: 14px;
 }
 .signature-note strong { color: var(--orange-ink); font-weight: 500; }
 .swatch-inline {
-  width: 28px; height: 28px; border-radius: 50%;
+  flex: none; width: 28px; height: 28px; border-radius: 50%;
   background: var(--orange); box-shadow: 0 0 20px var(--orange);
 }
 
@@ -215,7 +215,7 @@ a { color: inherit; }
   font-family: var(--mono); font-size: 12px; color: rgba(255, 240, 225, .85); letter-spacing: .14em;
 }
 .piece-text h2 { font-size: clamp(34px, 4.5vw, 52px); margin-bottom: 28px; }
-.piece-text > p { color: var(--muted); font-size: 18px; margin-bottom: 16px; max-width: 520px; }
+.piece-text > p:not(.eyebrow) { color: var(--muted); font-size: 18px; margin-bottom: 16px; max-width: 520px; }
 .specs { margin: 36px 0 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
 .specs div {
   display: grid; grid-template-columns: 140px 1fr; gap: 16px;
@@ -298,8 +298,8 @@ a { color: inherit; }
 .contact-card .eyebrow { color: var(--ink); justify-content: center; }
 .contact-card .eyebrow::after { display: none; }
 .contact-card h2 { font-size: clamp(36px, 5vw, 60px); margin-bottom: 20px; position: relative; }
-.contact-card p { position: relative; max-width: 520px; margin: 0 auto; opacity: .8; font-size: 18px; }
-.contact-card .contact-soon {
+.contact-card p:not(.eyebrow) { position: relative; max-width: 520px; margin: 0 auto; opacity: .8; font-size: 18px; }
+.contact-card p.contact-soon {
   margin-top: 32px; display: inline-block; opacity: 1;
   padding: 10px 20px; border-radius: var(--pill);
   border: 1px solid rgba(236, 234, 228, .3);
@@ -308,7 +308,7 @@ a { color: inherit; }
 .contact-glow {
   position: absolute; left: 50%; bottom: -60%; width: 80%; aspect-ratio: 1;
   transform: translateX(-50%); border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--orange) 55%, transparent), transparent 65%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--orange) 28%, transparent), transparent 60%);
 }
 
 /* FOOTER */
