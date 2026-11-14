@@ -54,7 +54,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 body {
   margin: 0;
   background: var(--bg);
@@ -268,6 +268,21 @@ a { color: inherit; }
 .commitment h3 { font-size: 26px; }
 .commitment p { color: var(--muted); font-size: 16px; }
 
+/* INSPIRATIONS */
+.inspirations { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.insp-group h3 {
+  font-size: 15px; font-family: "Inter", system-ui, sans-serif; font-weight: 500;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--orange-ink);
+  padding-bottom: 14px; border-bottom: 1px solid var(--line);
+}
+.insp-group ul { list-style: none; margin: 0; padding: 0; }
+.insp-group li { padding: 16px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+.insp-group strong {
+  font-family: "Fraunces", Georgia, serif; font-variation-settings: "SOFT" 100;
+  font-weight: 400; font-size: 21px; letter-spacing: -.01em; line-height: 1.2;
+}
+.insp-group span { color: var(--muted); font-size: 15px; }
+
 /* PROJECTS */
 .projects { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .project {
@@ -334,6 +349,7 @@ a { color: inherit; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .step:last-child { grid-column: 1 / -1; }
   .commitments { grid-template-columns: 1fr; }
+  .inspirations { grid-template-columns: repeat(2, 1fr); gap: 40px 32px; }
 }
 @media (max-width: 820px) {
   .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 48px; gap: 24px; }
@@ -344,7 +360,7 @@ a { color: inherit; }
   .section { padding-top: 80px; padding-bottom: 80px; }
 }
 @media (max-width: 560px) {
-  .principles, .materials, .steps { grid-template-columns: 1fr; }
+  .principles, .materials, .steps, .inspirations { grid-template-columns: 1fr; }
   .commitment { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
   .project { grid-template-columns: 1fr; gap: 12px; padding: 24px; }
   .project .tag { justify-self: start; }
