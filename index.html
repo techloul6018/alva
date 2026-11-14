@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alva — Studio de design d'objet</title>
+<meta name="description" content="Alva est un studio de design d'objet. Des formes douces, des matières qui vieillissent bien, et la lumière comme matériau.">
+<meta property="og:title" content="Alva — Studio de design d'objet">
+<meta property="og:description" content="Des objets aux formes douces, qui captent la lumière.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,100&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a href="#top" class="logo" aria-label="Alva, accueil">alva<span class="dot"></span></a>
+  <nav aria-label="Navigation principale">
+    <a href="#univers">Univers</a>
+    <a href="#matieres">Matières</a>
+    <a href="#piece-01">N°01</a>
+    <a href="#atelier">Atelier</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Studio de design d'objet</p>
+      <h1>Des objets qui <em>captent</em> la lumière.</h1>
+      <p class="lead">Alva dessine des objets du quotidien aux formes douces. La chaleur du bois, la précision de l'aluminium, l'éclat de l'orange&nbsp;: entre l'utile et le beau, des pièces faites pour durer.</p>
+      <div class="hero-actions">
+        <a href="#piece-01" class="btn btn-primary">Découvrir la pièce N°01</a>
+        <a href="#univers" class="btn btn-ghost">L'univers du studio</a>
+      </div>
+    </div>
+    <figure class="hero-visual" aria-label="Illustration de la lampe N°01 : un pied en aluminium incliné, une tête en aluminium et une demi-sphère orange lumineuse">
+      <div class="glow" aria-hidden="true"></div>
+      <svg viewBox="0 0 400 440" class="lamp" aria-hidden="true">
+        <defs>
+          <linearGradient id="alu" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" style="stop-color:var(--alu-hi)"/>
+            <stop offset=".55" style="stop-color:var(--alu)"/>
+            <stop offset="1" style="stop-color:var(--alu-lo)"/>
+          </linearGradient>
+          <linearGradient id="aluSide" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" style="stop-color:var(--alu)"/>
+            <stop offset="1" style="stop-color:var(--alu-lo)"/>
+          </linearGradient>
+          <radialGradient id="dome" cx=".5" cy=".15" r=".9">
+            <stop offset="0" stop-color="#ffd59a"/>
+            <stop offset=".45" style="stop-color:var(--orange)"/>
+            <stop offset="1" style="stop-color:var(--orange-deep)"/>
+          </radialGradient>
+          <radialGradient id="pool" cx=".5" cy=".5" r=".5">
+            <stop offset="0" style="stop-color:var(--orange)" stop-opacity=".55"/>
+            <stop offset="1" style="stop-color:var(--orange)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- light pool on the table -->
+        <ellipse cx="200" cy="402" rx="170" ry="22" fill="url(#pool)"/>
+        <!-- foot plate -->
+        <rect x="96" y="384" width="210" height="16" rx="8" fill="url(#aluSide)"/>
+        <!-- inclined stand (iMac foot) -->
+        <path d="M148 388 L222 150 Q226 138 238 138 L258 138 Q270 138 266 150 L196 388 Z" fill="url(#alu)"/>
+        <!-- hinge -->
+        <rect x="214" y="128" width="64" height="20" rx="10" fill="url(#aluSide)"/>
+        <!-- head (Mac mini body) -->
+        <rect x="96" y="70" width="236" height="62" rx="22" fill="url(#alu)"/>
+        <rect x="110" y="80" width="208" height="6" rx="3" fill="#fff" opacity=".35"/>
+        <!-- orange half-sphere -->
+        <path d="M156 132 A58 58 0 0 0 272 132 Z" fill="url(#dome)" class="dome"/>
+      </svg>
+      <figcaption>N°01 — lampe de chevet, seconde vie</figcaption>
+    </figure>
+  </section>
+
+  <!-- STRATA BAND -->
+  <div class="strata" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- UNIVERS -->
+  <section id="univers" class="section">
+    <div class="section-head">
+      <p class="eyebrow">Univers</p>
+      <h2>Un minimalisme chaleureux.</h2>
+      <p class="section-lead">Le calme du Japandi, réchauffé par le soleil des années 70. Assez sobre pour servir chaque jour, assez singulier pour qu'on le remarque.</p>
+    </div>
+    <div class="principles">
+      <article class="principle reveal">
+        <div class="p-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="6" y="6" width="36" height="36" rx="18"/></svg></div>
+        <h3>Pas d'angles</h3>
+        <p>Des arrondis partout&nbsp;: plus doux à la main, plus sûrs, et des objets qui vieillissent rarement mal.</p>
+      </article>
+      <article class="principle reveal">
+        <div class="p-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 28 A14 14 0 0 0 38 28 Z"/><path d="M24 6v8M10 12l5 5M38 12l-5 5" class="stroke"/></svg></div>
+        <h3>La lumière comme matière</h3>
+        <p>On ne voit jamais la source, seulement la lumière. Elle chauffe le bois, glisse sur l'alu, traverse l'orange.</p>
+      </article>
+      <article class="principle reveal">
+        <div class="p-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 34h32M8 26h32M8 18h32" class="stroke"/></svg></div>
+        <h3>Des matières honnêtes</h3>
+        <p>La beauté vient du matériau lui-même&nbsp;: tranche du contreplaqué, patine du cuir, grain du béton.</p>
+      </article>
+      <article class="principle reveal">
+        <div class="p-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M36 18a13 13 0 1 0 2 10" class="stroke"/><path d="M38 10v9h-9" class="stroke"/></svg></div>
+        <h3>Seconde vie</h3>
+        <p>Partir d'une contrainte plutôt que d'une page blanche. Détourner un objet sans trahir sa forme.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- MATIÈRES -->
+  <section id="matieres" class="section section-tinted">
+    <div class="section-head">
+      <p class="eyebrow">Matières</p>
+      <h2>Ce qui est chaud, ce qui est précis.</h2>
+      <p class="section-lead">D'un côté l'organique et le vivant, de l'autre la rigueur et la modernité. Les objets Alva naissent de leur rencontre.</p>
+    </div>
+    <ul class="materials">
+      <li class="material reveal"><span class="swatch sw-wood" aria-hidden="true"></span><div><h3>Bois</h3><p>Chêne, frêne, bois huilé.</p></div></li>
+      <li class="material reveal"><span class="swatch sw-ply" aria-hidden="true"></span><div><h3>Contreplaqué</h3><p>Strates colorées visibles sur la tranche.</p></div></li>
+      <li class="material reveal"><span class="swatch sw-alu" aria-hidden="true"></span><div><h3>Aluminium</h3><p>Brossé, il capte la lumière.</p></div></li>
+      <li class="material reveal"><span class="swatch sw-glass" aria-hidden="true"></span><div><h3>Verre</h3><p>Ambré, diffus, jamais banal.</p></div></li>
+      <li class="material reveal"><span class="swatch sw-leather" aria-hidden="true"></span><div><h3>Cuir</h3><p>Tanné végétal, qui se patine.</p></div></li>
+      <li class="material reveal"><span class="swatch sw-linen" aria-hidden="true"></span><div><h3>Lin &amp; coton</h3><p>Textures naturelles, douces.</p></div></li>
+      <li class="material reveal"><span class="swatch sw-concrete" aria-hidden="true"></span><div><h3>Béton</h3><p>Coulé en moule silicone, teinté.</p></div></li>
+      <li class="material reveal"><span class="swatch sw-plant" aria-hidden="true"></span><div><h3>Végétal</h3><p>La plante comme partie de l'objet.</p></div></li>
+    </ul>
+    <p class="signature-note"><span class="swatch-inline" aria-hidden="true"></span>Et une couleur signature&nbsp;: <strong>l'orange</strong>, celle qui réagit le mieux à la lumière.</p>
+  </section>
+
+  <!-- PIÈCE 01 -->
+  <section id="piece-01" class="section">
+    <div class="piece">
+      <div class="piece-visual reveal">
+        <div class="piece-frame">
+          <span class="piece-num">N°01</span>
+          <svg viewBox="0 0 400 440" class="lamp lamp-small" aria-hidden="true">
+            <ellipse cx="200" cy="402" rx="170" ry="22" fill="url(#pool)"/>
+            <rect x="96" y="384" width="210" height="16" rx="8" fill="url(#aluSide)"/>
+            <path d="M148 388 L222 150 Q226 138 238 138 L258 138 Q270 138 266 150 L196 388 Z" fill="url(#alu)"/>
+            <rect x="214" y="128" width="64" height="20" rx="10" fill="url(#aluSide)"/>
+            <rect x="96" y="70" width="236" height="62" rx="22" fill="url(#alu)"/>
+            <rect x="110" y="80" width="208" height="6" rx="3" fill="#fff" opacity=".35"/>
+            <path d="M156 132 A58 58 0 0 0 272 132 Z" fill="url(#dome)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="piece-text">
+        <p class="eyebrow">Pièce N°01</p>
+        <h2>La lampe de chevet, seconde vie.</h2>
+        <p>Deux icônes du design industriel, détournées en une seule lampe. Le pied en aluminium d'un iMac devient la tige. Le corps d'un Mac mini devient la tête.</p>
+        <p>Dedans, l'ampoule est cachée par une demi-sphère orange imprimée en 3D. La lumière la traverse, redescend et remonte sur l'alu brossé&nbsp;: la lampe semble flotter.</p>
+        <dl class="specs">
+          <div><dt>Pied</dt><dd>Support aluminium d'iMac</dd></div>
+          <div><dt>Tête</dt><dd>Corps de Mac mini</dd></div>
+          <div><dt>Diffuseur</dt><dd>Demi-sphère PLA orange, imprimée en 3D</dd></div>
+          <div><dt>Démarche</dt><dd>Upcycling, pièce unique</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATELIER -->
+  <section id="atelier" class="section section-tinted">
+    <div class="section-head">
+      <p class="eyebrow">À l'atelier</p>
+      <h2>Les prochaines pièces.</h2>
+      <p class="section-lead">Ce qui se dessine en ce moment, de la plus simple à la plus ambitieuse.</p>
+    </div>
+    <ol class="projects">
+      <li class="project reveal">
+        <span class="project-step">02</span>
+        <div>
+          <h3>Béton coulé</h3>
+          <p>Vide-poches, bougeoirs, cache-pots. Moules en silicone, béton teinté dans la masse.</p>
+        </div>
+        <span class="tag tag-live">En cours</span>
+      </li>
+      <li class="project reveal">
+        <span class="project-step">03</span>
+        <div>
+          <h3>Lampe métal &amp; verre</h3>
+          <p>Une nouvelle lumière, pensée de zéro autour de ce que le verre doit raconter.</p>
+        </div>
+        <span class="tag">En recherche</span>
+      </li>
+      <li class="project reveal">
+        <span class="project-step">04</span>
+        <div>
+          <h3>Table en contreplaqué</h3>
+          <p>Fines couches cintrées et collées sur gabarit, strates colorées sur la tranche.</p>
+        </div>
+        <span class="tag">En recherche</span>
+      </li>
+      <li class="project reveal">
+        <span class="project-step">05</span>
+        <div>
+          <h3>Mosaïque sur béton</h3>
+          <p>Une géométrie rigoureuse, une palette réduite&nbsp;: orange, noir, blanc.</p>
+        </div>
+        <span class="tag">Esquisse</span>
+      </li>
+      <li class="project reveal">
+        <span class="project-step">06</span>
+        <div>
+          <h3>Banc, puis fauteuil</h3>
+          <p>L'assise, quand le bois n'aura plus de secret.</p>
+        </div>
+        <span class="tag">Plus tard</span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="contact-card">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <p class="eyebrow">Contact</p>
+      <h2>Une pièce vous parle&nbsp;?</h2>
+      <p>Commande, collaboration, presse, ou simple curiosité&nbsp;: le studio répond à chaque message.</p>
+      <p class="contact-soon">Adresse et réseaux de l'atelier très bientôt.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span class="logo logo-small">alva<span class="dot"></span></span>
+  <span>Studio de design d'objet</span>
+  <span>© <span id="year">2026</span></span>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
