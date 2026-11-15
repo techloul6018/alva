@@ -179,7 +179,16 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .insp strong { font-size: 24px; font-weight: 600; line-height: 1.05; }
 .insp span { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--soft); }
 
-/* contact */
+/* contact : damier orange foncé / blanc cassé en fond, texte sur un panneau uni */
+/* site.js sets --cell so the section is a whole number of squares wide and tall */
+.contact {
+  --cell: 44px;
+  background: repeating-conic-gradient(var(--ink) 0 25%, var(--paper) 0 50%) 0 0 / calc(var(--cell) * 2) calc(var(--cell) * 2);
+  border-top: 0;
+}
+.sec.contact { padding: calc(var(--cell) * 2); }
+.contact-card { background: var(--paper); padding: 56px clamp(24px, 4vw, 56px) 64px; }
+.contact-card .sec-head { margin-top: 0; }
 .contact-big { margin: 40px 0 0 72px; font-size: clamp(56px, 9vw, 140px); line-height: .88; font-weight: 600; letter-spacing: -.035em; }
 .contact-soon { margin: 36px 0 0 72px; display: inline-flex; padding: 10px 20px; border-radius: 999px; background: var(--orange); color: var(--paper); font-weight: 500; }
 

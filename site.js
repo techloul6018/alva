@@ -36,3 +36,21 @@ if ('IntersectionObserver' in window) {
   }, { rootMargin: '-40% 0px -55% 0px' });
   document.querySelectorAll('main section[id]').forEach((s) => spy.observe(s));
 }
+
+// Damier du contact : des cases entières, en largeur comme en hauteur
+const contact = document.querySelector('.contact');
+const card = contact && contact.querySelector('.contact-card');
+const fitChecker = () => {
+  card.style.minHeight = '';
+  const w = contact.clientWidth;
+  const cell = w / Math.max(8, Math.round(w / (w < 600 ? 28 : 44)));
+  contact.style.setProperty('--cell', `${cell}px`);
+  const inner = card.offsetHeight;
+  const rows = Math.ceil(inner / cell);
+  card.style.minHeight = `${rows * cell}px`;
+};
+if (card) {
+  fitChecker();
+  addEventListener('resize', fitChecker);
+  document.fonts && document.fonts.ready.then(fitChecker);
+}
