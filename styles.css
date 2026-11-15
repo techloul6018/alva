@@ -190,7 +190,9 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .contact-card { background: var(--paper); padding: 56px clamp(24px, 4vw, 56px) 64px; }
 .contact-card .sec-head { margin-top: 0; }
 .contact-big { margin: 40px 0 0 72px; font-size: clamp(56px, 9vw, 140px); line-height: .88; font-weight: 600; letter-spacing: -.035em; }
-.contact-soon { margin: 36px 0 0 72px; display: inline-flex; padding: 10px 20px; border-radius: 999px; background: var(--orange); color: var(--paper); font-weight: 500; }
+/* coordonnées à venir : même tableau que la fiche technique de la N°01 */
+.contact-soon { margin: 40px 0 0 72px; max-width: 480px; }
+.contact-soon dd { margin: 0; }
 
 .footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 32px 0 40px; border-top: 1px solid var(--line); font-size: 14px; }
 
