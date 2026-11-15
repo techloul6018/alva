@@ -179,6 +179,16 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .insp strong { font-size: 24px; font-weight: 600; line-height: 1.05; }
 .insp span { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--soft); }
 
+/* carnet de croquis : même grille à filets que les matières */
+.carnet { margin: 72px 0 0 72px; }
+.carnet-title { font-size: 40px; font-weight: 600; line-height: 1; font-stretch: 62%; letter-spacing: -.02em; }
+.carnet-lead { margin-top: 10px; font-size: 17px; }
+.carnet-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.carnet-grid figure { padding: 16px 16px 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.carnet-grid img { width: 100%; height: auto; aspect-ratio: 1; display: block; }
+.carnet-grid figcaption { margin-top: 8px; font-size: 14px; display: flex; gap: 10px; align-items: baseline; }
+.carnet-grid figcaption span { font-family: var(--serif); font-style: italic; font-size: 16px; }
+
 /* contact : damier orange foncé / blanc cassé en fond, texte sur un panneau uni */
 /* site.js sets --cell so the section is a whole number of squares wide and tall */
 .contact {
@@ -242,7 +252,8 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
   .sec { padding: 64px 0; }
   .sec-head { grid-template-columns: 48px 1fr; }
   .num { font-size: 22px; }
-  .sec-lead, .rows, .mat-grid, .piece, .list, .steps, .insp, .contact-big, .contact-soon { margin-left: 0; }
+  .sec-lead, .rows, .mat-grid, .piece, .list, .steps, .insp, .contact-big, .contact-soon, .carnet { margin-left: 0; }
+  .carnet-grid { grid-template-columns: repeat(2, 1fr); }
   .row { grid-template-columns: 32px 1fr; }
   .row p { grid-column: 2; }
 }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="105 520 1090 1090" role="img" aria-label="Croquis : lampe à abat-jour cubique aux arêtes douces, tige et socle en galet"><g fill="none" stroke="#c2410c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+<path vector-effect="non-scaling-stroke" d="M370 746 L628 548 L926 722"/>
+<path vector-effect="non-scaling-stroke" d="M378 760 C470 800 580 860 676 900 C760 860 850 790 926 734"/>
+<path vector-effect="non-scaling-stroke" d="M380 762 L404 948 L676 1036 L938 930 L926 736"/>
+<path vector-effect="non-scaling-stroke" d="M678 902 L676 1036"/>
+<ellipse vector-effect="non-scaling-stroke" cx="588" cy="706" rx="13" ry="10"/><ellipse vector-effect="non-scaling-stroke" cx="582" cy="838" rx="13" ry="10"/>
+<path vector-effect="non-scaling-stroke" d="M588 720 L584 824" stroke-dasharray="7 9" stroke-width="1.6"/>
+<path vector-effect="non-scaling-stroke" d="M586 1040 L586 1288 M612 1040 L612 1288"/>
+<path vector-effect="non-scaling-stroke" d="M586 1288 C586 1306 612 1306 612 1288"/>
+<path vector-effect="non-scaling-stroke" d="M500 1296 C460 1310 452 1400 486 1450 C540 1520 700 1580 812 1572 C880 1566 896 1490 862 1430 C820 1360 720 1320 620 1300 C576 1292 530 1288 500 1296 Z"/>
+</g></svg>
