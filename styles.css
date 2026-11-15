@@ -142,11 +142,8 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 
 /* pièce N°01 */
 .piece { margin: 56px 0 0 72px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 4vw, 64px); align-items: start; }
-/* fiche N°01 : titre, sous-titre, photo rectangulaire 3:4 sans arrondi ni ombre, crédit */
-.fiche { container-type: inline-size; }
-.fiche-title { font-size: min(clamp(3rem, 9vw, 5.5rem), 17cqi); font-weight: 400; font-stretch: 100%; letter-spacing: -.04em; line-height: .95; }
-.fiche-sub { margin-top: 12px; font-size: 1.1rem; }
-.fiche-frame { margin-top: 28px; aspect-ratio: 3 / 4; overflow: hidden; }
+/* fiche N°01 : photo rectangulaire 3:4 sans arrondi ni ombre, crédit */
+.fiche-frame { aspect-ratio: 3 / 4; overflow: hidden; }
 .fiche-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .fiche-credit { margin-top: 12px; font-size: .9rem; }
 .piece-title { font-size: clamp(40px, 4.4vw, 64px); line-height: .92; font-weight: 600; margin-bottom: 28px; }
