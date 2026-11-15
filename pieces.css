@@ -1,0 +1,126 @@
+/* Alva — fiches pièces : une fiche par écran, mêmes couleurs que le site */
+:root {
+  --paper: #f2eee6;
+  --ink: #c2410c;
+  --orange: #ea580c;
+  --tint: color-mix(in srgb, var(--ink) 7%, var(--paper));
+  --sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 16px/1.4 var(--sans);
+  font-stretch: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, p, figure { margin: 0; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--orange); color: var(--paper); }
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+/* fixed chrome */
+.home {
+  position: fixed; top: 18px; left: 20px; z-index: 5;
+  font-size: 22px; font-weight: 700; font-stretch: 62%; letter-spacing: -.04em;
+  display: inline-flex; align-items: flex-end; gap: 1px; padding: 4px;
+}
+.home i { width: .2em; height: .2em; border-radius: 50%; background: var(--orange); margin-bottom: .18em; }
+.counter {
+  position: fixed; right: 20px; bottom: 18px; z-index: 5;
+  font-size: 14px; font-variant-numeric: tabular-nums; letter-spacing: .02em;
+}
+
+/* one fiche = one screen */
+.fiche {
+  height: 100vh; height: 100svh;
+  scroll-snap-align: start; scroll-snap-stop: always;
+  display: grid; place-items: center;
+}
+/* portrait 9:16 column: full width on phones, centred on desktop */
+.fiche-in {
+  /* 9:16 on phones; on wider screens a slightly narrower centred column leaves white under the credit */
+  --w: min(100vw, calc(100svh * 9 / 16), 46svh);
+  container-type: inline-size;
+  width: var(--w);
+  height: 100%;
+  /* 10 % of the column itself, not of the screen */
+  padding: 9svh calc(var(--w) * .1) 0;
+  display: flex; flex-direction: column;
+}
+.fiche-title {
+  font-size: min(clamp(3rem, 9vw, 5.5rem), 15cqi);
+  font-weight: 400;
+  letter-spacing: -.04em;
+  line-height: .95;
+}
+.fiche-sub { margin-top: 12px; font-size: 1.1rem; }
+.frame {
+  position: relative;
+  margin-top: 4svh;
+  width: 100%; aspect-ratio: 3 / 4;
+  background: var(--tint);
+  overflow: hidden;
+}
+.fiche-credit { margin-top: 12px; font-size: .9rem; }
+
+/* fiche enter transition: fade + 20px rise */
+.js .fiche-in > * { opacity: 0; transform: translateY(20px); transition: opacity .4s var(--ease-out), transform .4s var(--ease-out); }
+.js .fiche.is-active .fiche-in > * { opacity: 1; transform: none; }
+.js .fiche.is-active .fiche-in > :nth-child(2) { transition-delay: 40ms; }
+.js .fiche.is-active .fiche-in > :nth-child(3) { transition-delay: 80ms; }
+.js .fiche.is-active .fiche-in > :nth-child(4) { transition-delay: 120ms; }
+
+/* slideshow: stacked photos, 200 ms cross-fade */
+.slide { position: absolute; inset: 0; opacity: 0; transition: opacity .2s linear; }
+.slide.is-on { opacity: 1; }
+.slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.play {
+  position: absolute; inset: 0; z-index: 1;
+  display: grid; place-items: center;
+  width: 100%; border: 0; padding: 0; margin: 0;
+  background: none; color: var(--ink); cursor: pointer;
+}
+.play svg {
+  width: 64px; height: 64px; padding: 20px; border-radius: 50%;
+  background: color-mix(in srgb, var(--paper) 72%, transparent);
+  fill: currentColor;
+  transition: opacity .2s linear;
+}
+.play .i-play { display: none; }
+.play[aria-pressed="true"] .i-play { display: block; }
+.play[aria-pressed="true"] .i-pause { display: none; }
+/* the button fades out while the pointer is over the frame, or right after a click */
+.frame:hover .play svg, .play.is-quiet svg { opacity: 0; }
+.play:focus-visible svg { opacity: 1; }
+.play:focus-visible { outline-offset: -4px; }
+
+/* pieces without photos yet */
+.frame-sketch { display: grid; place-items: center; }
+.sketch { width: 62%; height: auto; overflow: visible; }
+.sketch .line, .sketch .fill-line { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sketch .fill-line { stroke: var(--orange); }
+.sketch .fill { fill: var(--orange); }
+.sketch .dash { fill: none; stroke: var(--ink); stroke-width: 2; stroke-dasharray: 4 5; stroke-linecap: round; }
+.sketch .dot { fill: none; stroke: var(--ink); stroke-width: 2; stroke-dasharray: 1 5; stroke-linecap: round; }
+.frame-sketch figcaption { position: absolute; left: 0; right: 0; bottom: 16px; text-align: center; font-size: .9rem; }
+
+/* short screens: tighten the vertical rhythm so the frame still fits */
+@media (max-height: 700px) {
+  .fiche-in { padding-top: 7svh; }
+  .frame { margin-top: 2.5svh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .fiche-in > * { opacity: 1; transform: none; transition: none; }
+  .slide { transition: none; }
+}

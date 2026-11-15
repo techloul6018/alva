@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pièces · Alva</title>
+<meta name="description" content="Les pièces d'Alva, une fiche par objet : la lampe de chevet N°01 et les pièces en préparation.">
+<meta property="og:title" content="Pièces · Alva">
+<meta property="og:image" content="https://alva-steel.vercel.app/images/n01-face.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f2eee6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pieces.css">
+</head>
+<body>
+
+<a href="index.html" class="home" aria-label="Retour à l'accueil d'Alva">alva<i aria-hidden="true"></i></a>
+<p class="counter" aria-live="polite"><span class="counter-now">01</span> / <span class="counter-total">06</span></p>
+
+<main class="fiches">
+
+  <!-- N°01 : 4 photos -->
+  <article class="fiche" id="n01" aria-labelledby="t01">
+    <div class="fiche-in">
+      <h1 class="fiche-title" id="t01">Lampe de chevet</h1>
+      <p class="fiche-sub">Une lampe faite d'un pied d'iMac et d'un Mac mini</p>
+      <figure class="frame" data-slides>
+        <picture class="slide is-on">
+          <source srcset="images/n01-face.webp" type="image/webp">
+          <img src="images/n01-face.jpg" width="1200" height="1600" alt="La lampe N°01 de face, allumée, devant un mur en bois : tête en aluminium de Mac mini, demi-sphère orange lumineuse, pied d'iMac percé d'un trou rond.">
+        </picture>
+        <picture class="slide">
+          <source srcset="images/n01-chevet.webp" type="image/webp">
+          <img src="images/n01-chevet.jpg" width="1200" height="1600" loading="lazy" alt="La lampe N°01 sur une table de chevet en chêne, à côté d'un lit à la housse orange et d'un livre, Terre des hommes.">
+        </picture>
+        <picture class="slide">
+          <source srcset="images/n01-charniere.webp" type="image/webp">
+          <img src="images/n01-charniere.jpg" width="1200" height="1600" loading="lazy" alt="La lampe N°01 de profil : la charnière d'origine de l'iMac relie le pied à la tête, sous une pièce de fixation grise imprimée en 3D.">
+        </picture>
+        <picture class="slide">
+          <source srcset="images/n01-chambre.webp" type="image/webp">
+          <img src="images/n01-chambre.jpg" width="1200" height="1600" loading="lazy" alt="La lampe N°01 allumée dans une chambre sombre, qui projette une lumière orange sur le mur.">
+        </picture>
+        <button class="play" type="button" aria-label="Mettre le diaporama en pause" aria-pressed="false">
+          <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>
+        </button>
+      </figure>
+      <p class="fiche-credit">par Alva · pièce unique</p>
+    </div>
+  </article>
+
+  <!-- N°02 à N°06 : pas encore de photo, un croquis à la place -->
+  <article class="fiche" id="n02" aria-labelledby="t02">
+    <div class="fiche-in">
+      <h2 class="fiche-title" id="t02">Béton coulé</h2>
+      <p class="fiche-sub">Vide-poches, bougeoirs et cache-pots moulés en silicone</p>
+      <figure class="frame frame-sketch">
+        <svg viewBox="0 0 120 160" class="sketch" role="img" aria-label="Croquis : un bol en béton et une bougie">
+          <path d="M18 92 Q18 122 52 122 Q86 122 86 92 Z" class="line"/>
+          <ellipse cx="52" cy="92" rx="34" ry="8" class="line"/>
+          <rect x="84" y="100" width="22" height="22" rx="5" class="fill"/>
+          <path d="M95 90 L95 98" class="line"/>
+          <path d="M10 126 H112" class="dash"/>
+        </svg>
+        <figcaption>Pas encore de photo</figcaption>
+      </figure>
+      <p class="fiche-credit">par Alva · en cours</p>
+    </div>
+  </article>
+
+  <article class="fiche" id="n03" aria-labelledby="t03">
+    <div class="fiche-in">
+      <h2 class="fiche-title" id="t03">Lampe métal &amp; verre</h2>
+      <p class="fiche-sub">La première lampe dessinée sans objet de départ</p>
+      <figure class="frame frame-sketch">
+        <svg viewBox="0 0 120 160" class="sketch" role="img" aria-label="Croquis : un globe de verre sur une tige en métal">
+          <circle cx="60" cy="56" r="26" class="fill"/>
+          <path d="M60 82 L60 126" class="line"/>
+          <path d="M40 126 H80" class="line"/>
+          <path d="M60 18 V24 M36 28 L40 33 M84 28 L80 33" class="dot"/>
+          <path d="M10 132 H110" class="dash"/>
+        </svg>
+        <figcaption>Pas encore de photo</figcaption>
+      </figure>
+      <p class="fiche-credit">par Alva · en recherche</p>
+    </div>
+  </article>
+
+  <article class="fiche" id="n04" aria-labelledby="t04">
+    <div class="fiche-in">
+      <h2 class="fiche-title" id="t04">Table contreplaqué</h2>
+      <p class="fiche-sub">Fines couches cintrées, strates visibles sur la tranche</p>
+      <figure class="frame frame-sketch">
+        <svg viewBox="0 0 120 160" class="sketch" role="img" aria-label="Croquis : une table basse aux pieds cintrés">
+          <path d="M14 70 H106" class="line"/>
+          <path d="M14 75 H106" class="fill-line"/>
+          <path d="M14 80 H106" class="line"/>
+          <path d="M24 80 Q20 104 30 124 M96 80 Q100 104 90 124" class="line"/>
+          <path d="M8 128 H112" class="dash"/>
+        </svg>
+        <figcaption>Pas encore de photo</figcaption>
+      </figure>
+      <p class="fiche-credit">par Alva · en recherche</p>
+    </div>
+  </article>
+
+  <article class="fiche" id="n05" aria-labelledby="t05">
+    <div class="fiche-in">
+      <h2 class="fiche-title" id="t05">Mosaïque</h2>
+      <p class="fiche-sub">Une géométrie stricte posée sur du béton</p>
+      <figure class="frame frame-sketch">
+        <svg viewBox="0 0 120 160" class="sketch" role="img" aria-label="Croquis : une grille de carreaux, certains pleins">
+          <rect x="24" y="44" width="72" height="72" rx="6" class="line"/>
+          <path d="M48 44 V116 M72 44 V116 M24 68 H96 M24 92 H96" class="line"/>
+          <rect x="27" y="47" width="18" height="18" rx="2" class="fill"/>
+          <rect x="51" y="71" width="18" height="18" rx="2" class="fill"/>
+          <rect x="75" y="95" width="18" height="18" rx="2" class="fill"/>
+        </svg>
+        <figcaption>Pas encore de photo</figcaption>
+      </figure>
+      <p class="fiche-credit">par Alva · esquisse</p>
+    </div>
+  </article>
+
+  <article class="fiche" id="n06" aria-labelledby="t06">
+    <div class="fiche-in">
+      <h2 class="fiche-title" id="t06">Banc, fauteuil</h2>
+      <p class="fiche-sub">L'assise, quand le bois n'aura plus de secret</p>
+      <figure class="frame frame-sketch">
+        <svg viewBox="0 0 120 160" class="sketch" role="img" aria-label="Croquis : un banc en bois">
+          <rect x="14" y="80" width="92" height="12" rx="6" class="fill"/>
+          <path d="M26 92 V122 M94 92 V122" class="line"/>
+          <path d="M8 126 H112" class="dash"/>
+        </svg>
+        <figcaption>Pas encore de photo</figcaption>
+      </figure>
+      <p class="fiche-credit">par Alva · plus tard</p>
+    </div>
+  </article>
+
+</main>
+
+<script src="pieces.js"></script>
+</body>
+</html>

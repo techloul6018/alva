@@ -244,3 +244,8 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
   .list-n { font-size: 30px; }
   .specs div { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* lien vers les fiches pièces */
+.fiche-link { display: inline-block; margin-top: 20px; font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.fiche-link:hover { color: var(--orange); }
+.sec-lead .fiche-link { margin-top: 0; }
