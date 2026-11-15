@@ -33,7 +33,7 @@ a { color: inherit; text-decoration: none; }
 
 /* condensed display type */
 .logo, h1, .sec-head h2, .num, .toc, .side-top, .index-title, .contact-big, .piece-title, .side-count,
-.list-n, .list h3, .row h3, .mat-grid h3, .steps h3, .insp strong {
+.list-n, .row h3, .mat-grid h3, .steps h3, .insp strong {
   font-stretch: 62%;
   letter-spacing: -.02em;
 }
@@ -157,11 +157,7 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .specs dt { font-family: var(--serif); font-style: italic; font-size: 18px; }
 
 /* atelier */
-.list { margin: 56px 0 0 72px; border-top: 1px solid var(--line); }
-.list li { display: grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); }
 .list-n { font-size: 40px; font-weight: 600; line-height: 1; }
-.list h3 { font-size: 30px; font-weight: 600; line-height: 1; }
-.list p { margin-top: 6px; color: var(--soft); }
 
 /* démarche */
 .steps { margin: 56px 0 0 72px; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); }
@@ -179,15 +175,16 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .insp strong { font-size: 24px; font-weight: 600; line-height: 1.05; }
 .insp span { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--soft); }
 
-/* carnet de croquis : même grille à filets que les matières */
-.carnet { margin: 72px 0 0 72px; }
-.carnet-title { font-size: 40px; font-weight: 600; line-height: 1; font-stretch: 62%; letter-spacing: -.02em; }
-.carnet-lead { margin-top: 10px; font-size: 17px; }
-.carnet-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.carnet-grid figure { padding: 16px 16px 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.carnet-grid img { width: 100%; height: auto; aspect-ratio: 1; display: block; }
-.carnet-grid figcaption { margin-top: 8px; font-size: 14px; display: flex; gap: 10px; align-items: baseline; }
-.carnet-grid figcaption span { font-family: var(--serif); font-style: italic; font-size: 16px; }
+/* projets de l'atelier : même mise en page que la Lampe N°01, les croquis à la place de la photo */
+.projet { margin: 72px 0 0 72px; padding-top: 28px; border-top: 1px solid var(--line); }
+.projet-head { display: grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: baseline; }
+.projet-head h3 { font-size: clamp(36px, 4vw, 56px); font-weight: 600; line-height: .95; font-stretch: 62%; letter-spacing: -.02em; }
+.projet .piece { margin: 32px 0 0; }
+.piece-solo { grid-template-columns: 1fr; }
+.piece-solo .piece-text { margin-left: 88px; }
+/* une feuille de carnet : le trait de crayon isolé, sur un aplat légèrement teinté */
+.fiche-frame.is-croquis { background: color-mix(in srgb, var(--ink) 6%, var(--paper)); }
+.fiche-more { margin-top: 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 16px; }
 
 /* contact : damier orange foncé / blanc cassé en fond, texte sur un panneau uni */
 /* site.js sets --cell so the section is a whole number of squares wide and tall */
@@ -252,8 +249,9 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
   .sec { padding: 64px 0; }
   .sec-head { grid-template-columns: 48px 1fr; }
   .num { font-size: 22px; }
-  .sec-lead, .rows, .mat-grid, .piece, .list, .steps, .insp, .contact-big, .contact-soon, .carnet { margin-left: 0; }
-  .carnet-grid { grid-template-columns: repeat(2, 1fr); }
+  .sec-lead, .rows, .mat-grid, .piece, .projet, .steps, .insp, .contact-big, .contact-soon { margin-left: 0; }
+  .projet-head { grid-template-columns: 52px 1fr; }
+  .piece-solo .piece-text { margin-left: 68px; }
   .row { grid-template-columns: 32px 1fr; }
   .row p { grid-column: 2; }
 }
@@ -267,7 +265,6 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
   .steps { grid-template-columns: 1fr; }
   .steps li, .steps li + li { padding: 20px 0 12px; border-left: 0; border-bottom: 1px solid var(--line); }
   .insp { grid-template-columns: 1fr; }
-  .list li { grid-template-columns: 52px 1fr; }
   .list-n { font-size: 30px; }
   .specs div { grid-template-columns: 1fr; gap: 0; }
 }
