@@ -129,7 +129,7 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .row p { max-width: 520px; color: var(--soft); }
 
 /* matières */
-.mat-grid { margin: 56px 0 0 72px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.mat-grid { margin: 56px 0 0 72px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .mat-grid li { padding: 24px 20px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .mat-grid h3 { margin-top: 20px; font-size: 28px; font-weight: 600; line-height: 1; }
 .mat-grid p { margin-top: 6px; font-size: 15px; color: var(--soft); }
@@ -139,6 +139,7 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .g-alu { background: repeating-linear-gradient(90deg, transparent 0 3px, color-mix(in srgb, var(--ink) 45%, transparent) 3px 4px); }
 .g-glass { background: radial-gradient(circle at 35% 35%, var(--paper) 0 18%, color-mix(in srgb, var(--orange) 55%, transparent) 60%); }
 .g-leather { background: var(--ink); }
+.g-cork { background: radial-gradient(var(--ink) 1.3px, transparent 1.8px) 0 0 / 7px 8px, radial-gradient(var(--ink) .9px, transparent 1.3px) 3px 4px / 5px 6px, color-mix(in srgb, var(--orange) 28%, var(--paper)); }
 .g-pla { background: linear-gradient(transparent 50%, var(--orange) 50%), repeating-linear-gradient(0deg, transparent 0 2px, color-mix(in srgb, var(--ink) 45%, transparent) 2px 3px); }
 .g-ceramic { background: radial-gradient(circle, var(--orange) 0 34%, transparent 35% 50%, var(--ink) 51% 55%, transparent 56%); }
 .g-linen { background: repeating-linear-gradient(45deg, transparent 0 3px, color-mix(in srgb, var(--ink) 55%, transparent) 3px 4px), repeating-linear-gradient(-45deg, transparent 0 3px, color-mix(in srgb, var(--ink) 35%, transparent) 3px 4px); }
@@ -221,6 +222,9 @@ html:not(.js) .fiche-frame[data-slides] { aspect-ratio: auto; }
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1180px) {
   .insp { grid-template-columns: repeat(2, 1fr); }
+  .mat-grid li { padding: 18px 12px 20px; }
+  .mat-grid h3 { font-size: 22px; }
+  .mat-grid p { font-size: 14px; }
   .steps { grid-template-columns: repeat(3, 1fr); }
   .steps li:nth-child(4) { border-left: 0; padding-left: 0; }
   .index-grid { grid-template-columns: repeat(3, 1fr); }
@@ -255,6 +259,7 @@ html:not(.js) .fiche-frame[data-slides] { aspect-ratio: auto; }
   .sec { padding: 64px 0; }
   .sec-head { grid-template-columns: 48px 1fr; }
   .num { font-size: 22px; }
+  .mat-grid { grid-template-columns: repeat(2, 1fr); }
   .sec-lead, .rows, .mat-grid, .piece, .projet, .steps, .insp, .contact-big, .contact-soon { margin-left: 0; }
   .projet-head { grid-template-columns: 52px 1fr; }
   .piece-solo .piece-text { margin-left: 68px; }
