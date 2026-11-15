@@ -129,7 +129,7 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .row p { max-width: 520px; color: var(--soft); }
 
 /* matières */
-.mat-grid { margin: 56px 0 0 72px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.mat-grid { margin: 56px 0 0 72px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .mat-grid li { padding: 24px 20px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .mat-grid h3 { margin-top: 20px; font-size: 28px; font-weight: 600; line-height: 1; }
 .mat-grid p { margin-top: 6px; font-size: 15px; color: var(--soft); }
@@ -139,6 +139,8 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .g-alu { background: repeating-linear-gradient(90deg, transparent 0 3px, color-mix(in srgb, var(--ink) 45%, transparent) 3px 4px); }
 .g-glass { background: radial-gradient(circle at 35% 35%, var(--paper) 0 18%, color-mix(in srgb, var(--orange) 55%, transparent) 60%); }
 .g-leather { background: var(--ink); }
+.g-pla { background: linear-gradient(transparent 50%, var(--orange) 50%), repeating-linear-gradient(0deg, transparent 0 2px, color-mix(in srgb, var(--ink) 45%, transparent) 2px 3px); }
+.g-ceramic { background: radial-gradient(circle, var(--orange) 0 34%, transparent 35% 50%, var(--ink) 51% 55%, transparent 56%); }
 .g-linen { background: repeating-linear-gradient(45deg, transparent 0 3px, color-mix(in srgb, var(--ink) 55%, transparent) 3px 4px), repeating-linear-gradient(-45deg, transparent 0 3px, color-mix(in srgb, var(--ink) 35%, transparent) 3px 4px); }
 .g-concrete { background: radial-gradient(var(--ink) 1px, transparent 1.4px) 0 0 / 7px 7px, radial-gradient(var(--ink) .8px, transparent 1.2px) 3px 4px / 9px 9px; }
 
@@ -207,7 +209,7 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1180px) {
-  .mat-grid, .insp { grid-template-columns: repeat(2, 1fr); }
+  .insp { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(3, 1fr); }
   .steps li:nth-child(4) { border-left: 0; padding-left: 0; }
   .index-grid { grid-template-columns: repeat(3, 1fr); }
@@ -249,9 +251,10 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 
 @media (max-width: 560px) {
   .index-grid { grid-template-columns: repeat(2, 1fr); }
-  .mat-grid { grid-template-columns: 1fr 1fr; }
-  .mat-grid li { padding: 18px 14px 20px; }
-  .mat-grid h3 { font-size: 24px; }
+  .mat-grid li { padding: 16px 10px 18px; }
+  .mat-grid .glyph { width: 40px; height: 40px; }
+  .mat-grid h3 { margin-top: 14px; font-size: 21px; }
+  .mat-grid p { font-size: 13px; }
   .steps { grid-template-columns: 1fr; }
   .steps li, .steps li + li { padding: 20px 0 12px; border-left: 0; border-bottom: 1px solid var(--line); }
   .insp { grid-template-columns: 1fr; }
