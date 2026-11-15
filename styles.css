@@ -184,7 +184,12 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .piece-solo .piece-text { margin-left: 88px; }
 /* une feuille de carnet : le trait de crayon isolé, sur un aplat légèrement teinté */
 .fiche-frame.is-croquis { background: color-mix(in srgb, var(--ink) 6%, var(--paper)); }
-.fiche-more { margin-top: 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 16px; }
+/* plusieurs croquis : ils défilent dans le même cadre, en fondu */
+.js .fiche-frame[data-slides] { position: relative; cursor: pointer; }
+.js .fiche-frame[data-slides] img { position: absolute; inset: 0; opacity: 0; transition: opacity .5s var(--ease); }
+.js .fiche-frame[data-slides] img.is-on { opacity: 1; }
+html:not(.js) .fiche-frame[data-slides] { aspect-ratio: auto; }
+.fiche-count { margin-left: 8px; font-family: var(--serif); font-style: italic; font-size: 1rem; }
 
 /* contact : damier orange foncé / blanc cassé en fond, texte sur un panneau uni */
 /* site.js sets --cell so the section is a whole number of squares wide and tall */
@@ -207,6 +212,7 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
 .js .reveal.is-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
+  .js .fiche-frame[data-slides] img { transition: none; }
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .mark { transition: none; }

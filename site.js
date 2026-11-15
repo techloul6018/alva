@@ -54,3 +54,37 @@ if (card) {
   addEventListener('resize', fitChecker);
   document.fonts && document.fonts.ready.then(fitChecker);
 }
+
+// Croquis : quand un projet en a plusieurs, ils défilent dans le même cadre.
+// Le défilé ne tourne que si le cadre est à l'écran ; un clic passe au suivant.
+const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.fiche-frame[data-slides]').forEach((frame) => {
+  const slides = [...frame.querySelectorAll('img')];
+  const fiche = frame.closest('.fiche');
+  const caption = fiche.querySelector('[data-slide-caption]');
+  const count = fiche.querySelector('[data-slide-count]');
+  let i = 0, timer = null, visible = false;
+  slides.forEach((img) => { img.loading = 'eager'; });
+  const show = (n) => {
+    slides[i].classList.remove('is-on');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('is-on');
+    caption.textContent = `croquis · ${slides[i].dataset.caption}`;
+    count.textContent = `${i + 1} / ${slides.length}`;
+  };
+  const sync = () => {
+    const run = visible && !document.hidden && !calm;
+    if (run && !timer) timer = setInterval(() => show(i + 1), 2600);
+    if (!run && timer) { clearInterval(timer); timer = null; }
+  };
+  frame.tabIndex = 0;
+  frame.setAttribute('role', 'button');
+  frame.setAttribute('aria-label', 'Croquis suivant');
+  const next = () => { show(i + 1); if (timer) { clearInterval(timer); timer = null; sync(); } };
+  frame.addEventListener('click', next);
+  frame.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); next(); } });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; sync(); }, { threshold: 0.4 }).observe(frame);
+  } else { visible = true; sync(); }
+  document.addEventListener('visibilitychange', sync);
+});
