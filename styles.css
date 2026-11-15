@@ -158,12 +158,10 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 
 /* atelier */
 .list { margin: 56px 0 0 72px; border-top: 1px solid var(--line); }
-.list li { display: grid; grid-template-columns: 72px 1fr auto; gap: 16px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.list li { display: grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); }
 .list-n { font-size: 40px; font-weight: 600; line-height: 1; }
 .list h3 { font-size: 30px; font-weight: 600; line-height: 1; }
 .list p { margin-top: 6px; color: var(--soft); }
-.tag { font-size: 13px; font-weight: 500; white-space: nowrap; padding: 6px 14px; border-radius: 999px; border: 1.5px solid var(--ink); }
-.tag-on { background: var(--orange); border-color: var(--orange); color: var(--paper); }
 
 /* démarche */
 .steps { margin: 56px 0 0 72px; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); }
@@ -259,7 +257,6 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
   .steps li, .steps li + li { padding: 20px 0 12px; border-left: 0; border-bottom: 1px solid var(--line); }
   .insp { grid-template-columns: 1fr; }
   .list li { grid-template-columns: 52px 1fr; }
-  .list .tag { grid-column: 2; justify-self: start; }
   .list-n { font-size: 30px; }
   .specs div { grid-template-columns: 1fr; gap: 0; }
 }
