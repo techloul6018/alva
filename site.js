@@ -69,7 +69,7 @@ document.querySelectorAll('.fiche-frame[data-slides]').forEach((frame) => {
     slides[i].classList.remove('is-on');
     i = (n + slides.length) % slides.length;
     slides[i].classList.add('is-on');
-    caption.textContent = `croquis · ${slides[i].dataset.caption}`;
+    caption.textContent = `${slides[i].dataset.kind || 'croquis'} · ${slides[i].dataset.caption}`;
     count.textContent = `${i + 1} / ${slides.length}`;
   };
   const sync = () => {
