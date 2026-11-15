@@ -76,7 +76,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- CONTENU ---------- */
 main { margin-left: var(--side); padding: 0 var(--gut) 0 clamp(24px, 5vw, 96px); max-width: calc(var(--side) + 1100px); }
 
-.hero { position: relative; min-height: 100vh; padding: 140px 0 80px; display: flex; flex-direction: column; }
+.hero { position: relative; padding: 140px 0 120px; display: flex; flex-direction: column; }
 .sketch { position: absolute; top: 28px; right: 0; width: 96px; height: auto; overflow: visible; }
 /* the favicon's orange slice, drawn large */
 
@@ -89,7 +89,8 @@ h1 {
 h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-weight: 400; font-stretch: 100%; letter-spacing: -.01em; }
 .lead { margin-top: 32px; max-width: 480px; font-size: 19px; line-height: 1.45; }
 
-.index-head { margin-top: auto; padding-top: 96px; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.pieces-index { padding-top: 96px; border-top: 1px solid var(--line); }
+.index-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
 .index-title { font-size: 32px; font-weight: 600; }
 .legend { display: flex; align-items: center; gap: 8px; font-size: 14px; flex-wrap: wrap; }
 .legend .d { margin-left: 10px; }
@@ -140,7 +141,6 @@ h1 em, .piece-title em { font-family: var(--serif); font-style: italic; font-wei
 .g-leather { background: var(--ink); }
 .g-linen { background: repeating-linear-gradient(45deg, transparent 0 3px, color-mix(in srgb, var(--ink) 55%, transparent) 3px 4px), repeating-linear-gradient(-45deg, transparent 0 3px, color-mix(in srgb, var(--ink) 35%, transparent) 3px 4px); }
 .g-concrete { background: radial-gradient(var(--ink) 1px, transparent 1.4px) 0 0 / 7px 7px, radial-gradient(var(--ink) .8px, transparent 1.2px) 3px 4px / 9px 9px; }
-.g-plant { background: radial-gradient(ellipse 30% 46% at 50% 50%, var(--orange) 98%, transparent); }
 
 /* pièce N°01 */
 .piece { margin: 56px 0 0 72px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 4vw, 64px); align-items: start; }
