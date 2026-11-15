@@ -74,11 +74,11 @@ main { margin-left: var(--side); padding: 0 var(--gut) 0 clamp(24px, 5vw, 96px);
 
 .hero { position: relative; min-height: 100vh; padding: 140px 0 80px; display: flex; flex-direction: column; }
 .sketch { position: absolute; top: 28px; right: 0; width: 96px; height: auto; overflow: visible; }
-/* the favicon's orange, drawn large */
-.sketch .fruit { fill: var(--orange); }
-.sketch .stem { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; }
-.sketch .leaf { fill: var(--ink); }
-.sketch .shine { fill: var(--paper); opacity: .55; }
+/* the favicon's orange slice, drawn large */
+.sketch .rind { fill: var(--orange); }
+.sketch .pulp { fill: #f9a46b; }
+.sketch .segments { fill: none; stroke: var(--paper); stroke-width: 2; stroke-linecap: round; }
+.sketch .core { fill: var(--paper); }
 
 .kicker { font-size: 15px; font-weight: 500; letter-spacing: .02em; }
 h1 {
